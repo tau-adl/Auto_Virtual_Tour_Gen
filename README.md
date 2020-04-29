@@ -8,7 +8,7 @@ a panorama image for each POI. These panoramas are then used for a virtual tour 
 
 The first step in the suggested workflow in acquiring an initial exploration video of the space to be visualized.
 This video is manually captured and it can be captured using any camera. It is the only step in the workflow that 
-requires a human intervention.The purpose of this step is to use an existing Simultaneous localization and mapping (SLAM)
+requires a human intervention. The purpose of this step is to use an existing Simultaneous localization and mapping (SLAM)
 solution to map the scene and retrieve a sparse point cloud.
 Next, the sparse point cloud of the scene, generated from the SLAM solution, is used to find the borders of the scene, 
 usually made of walls and doors, and calculate several POIs to which the drone is sent in order to capture images.
