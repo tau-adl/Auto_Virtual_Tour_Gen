@@ -20,11 +20,11 @@ Then, it uses the result panoramas to create a virtual tour, which is the final 
 
 
 # Virtual Tour example
-An example of the result virtual tour:
+An example of the result virtual tour can be easily viewed in your computer:
 1. Download the "example_tour" folder
 2. Run:
-- Windows: tour\tour_testingserver.exe
-- Linux: tour/tour_testingserver_macos
+    - Windows: tour\tour_testingserver.exe
+    - Linux: tour/tour_testingserver_macos
 3. The virtual tour will be opened in the browser.
 
 A demonstration of the tour can also be viewed in this video:
@@ -47,10 +47,12 @@ The code contains 2 different parts, which are used in different parts of the ab
 
     The code is a python wrap which uses these 2 external programs:
     2a. Hugin framework - Used to: create panoramas from single images
-        Download from: http://hugin.sourceforge.net/download/
+        Download from: 
+        http://hugin.sourceforge.net/download/
 
     2b. krpano framework - Used to: create a virtual tour from several panoramas
-        Download from: https://krpano.com/download
+        Download from: 
+        https://krpano.com/download
 
 
 
