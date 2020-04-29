@@ -27,6 +27,7 @@ An example of the result virtual tour can be easily viewed in your computer:
     - Linux: tour/tour_testingserver_macos
 3. The virtual tour will be opened in the browser.
 
+
 A demonstration of the tour can also be viewed in this video:
 #########
 
@@ -52,8 +53,9 @@ The code contains 2 different parts, which are used in different parts of the ab
     http://hugin.sourceforge.net/download/
 
     2b. krpano framework - Used to: create a virtual tour from several panoramas.
-        Download from: 
-        https://krpano.com/download
+        
+    Download from: 
+	https://krpano.com/download
 
 
 
