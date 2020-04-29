@@ -1,4 +1,4 @@
-# Auto-_Virtual_Tour_Gen
+# Auto_Virtual_Tour_Gen
 
 ## Background
 The workflow suggested in this project is an automatic virtual tour generation using a drone:
