@@ -19,7 +19,7 @@ Then, an automatic software performs images stitching to create a panoramic imag
 Then, it uses the result panoramas to create a virtual tour, which is the final output of the workflow.
 
 
-# Virtual Tour example
+# Virtual Tour Example
 An example of the result virtual tour can be easily viewed in your computer:
 1. Download the "example_tour" folder
 2. Run:
@@ -58,8 +58,8 @@ The code contains 2 different parts, which are used in different parts of the ab
 	https://krpano.com/download
 
 
-
-
+# More Details
+A detailed description of the software installation and the code can be fount in the project repost Appendix section.
 
 
 
