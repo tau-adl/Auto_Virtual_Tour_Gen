@@ -8,7 +8,7 @@
 
 	
 	
- <style alpha="0.6" capture="false" name="roomspot"/>
+ <style alpha="0.4" capture="false" name="roomspot"/>
  <action name="goto">skin_loadscene(%1, OPENBLEND(0.8, 0.0, 0.6, 0.3, easeOutQuad));</action>
  <skin_settings controlbar_height="40" controlbar_offset="20" controlbar_offset_closed="-40" controlbar_overlap.fractionalscaling="0" controlbar_overlap.no-fractionalscaling="10" controlbar_width="-24" deeplinking="false" design_bgalpha="0.8" design_bgborder="0" design_bgcolor="0x2D3E50" design_bgroundedge="1" design_bgshadow="0 4 10 0x000000 0.3" design_skin_images="vtourskin.png" design_text_css="color:#FFFFFF; font-family:Arial;" design_text_shadow="1" design_thumbborder_bgborder="3 0xFFFFFF 1.0" design_thumbborder_bgroundedge="0" design_thumbborder_padding="2" followmousecontrol="false" gyro="true" gyro_keeplookingdirection="false" layout_maxwidth="814" layout_width="100%" littleplanetintro="false" loadingtext="loading..." loadscene_blend="OPENBLEND(0.5, 0.0, 0.75, 0.05, linear)" loadscene_blend_next="SLIDEBLEND(0.5,   0, 0.75, linear)" loadscene_blend_prev="SLIDEBLEND(0.5, 180, 0.75, linear)" loadscene_flags="MERGE" maps="false" maps_bing_api_key="" maps_google_api_key="" maps_loadonfirstuse="true" maps_type="google" maps_zoombuttons="false" thumbs="true" thumbs_crop="0|40|240|160" thumbs_dragging="true" thumbs_height="80" thumbs_loop="false" thumbs_onhoverscrolling="false" thumbs_opened="false" thumbs_padding="10" thumbs_scrollbuttons="false" thumbs_scrollindicator="false" thumbs_text="false" thumbs_width="120" title="true" tooltips_buttons="false" tooltips_hotspots="false" tooltips_mapspots="false" tooltips_thumbs="false" webvr="true" webvr_keeplookingdirection="true" webvr_prev_next_hotspots="true"/>
  
@@ -121,10 +121,10 @@
 
 	
   <hotspot name="hs1" onclick="goto(scene_pano4);" style="roomspot|skin_tooltips" tooltip="click here">
-   <point ath="-70" atv="10"/>
-   <point ath="-70" atv="-10"/>
-   <point ath="-90" atv="-10"/>
-   <point ath="-90" atv="10"/>
+   <point ath="-80" atv="10"/>
+   <point ath="-80" atv="-10"/>
+   <point ath="-100" atv="-10"/>
+   <point ath="-100" atv="10"/>
   </hotspot>
  </scene>
  
@@ -166,7 +166,7 @@
   
 
 		
-  <view fov="120" fovmax="140" fovmin="70" fovtype="MFOV" hlookat="0.0" limitview="auto" maxpixelzoom="2.0" vlookat="0.0"/>
+  <view fov="120" fovmax="140" fovmin="70" fovtype="MFOV" hlookat="160.0" limitview="auto" maxpixelzoom="2.0" vlookat="0.0"/>
   
 
 		
@@ -185,10 +185,10 @@
 
 	
   <hotspot name="hs1" onclick="goto(scene_pano6);" style="roomspot|skin_tooltips" tooltip="click here">
-   <point ath="-70" atv="10"/>
-   <point ath="-70" atv="-10"/>
-   <point ath="-90" atv="-10"/>
-   <point ath="-90" atv="10"/>
+   <point ath="60" atv="10"/>
+   <point ath="60" atv="-10"/>
+   <point ath="80" atv="-10"/>
+   <point ath="80" atv="10"/>
   </hotspot>
  </scene>
  
@@ -198,7 +198,7 @@
   
 
 		
-  <view fov="120" fovmax="140" fovmin="70" fovtype="MFOV" hlookat="0.0" limitview="auto" maxpixelzoom="2.0" vlookat="0.0"/>
+  <view fov="120" fovmax="140" fovmin="70" fovtype="MFOV" hlookat="110.0" limitview="auto" maxpixelzoom="2.0" vlookat="0.0"/>
   
 
 		
@@ -217,10 +217,10 @@
 
 	
   <hotspot name="hs1" onclick="goto(scene_pano7);" style="roomspot|skin_tooltips" tooltip="click here">
-   <point ath="-10" atv="10"/>
-   <point ath="-10" atv="-10"/>
-   <point ath="10" atv="-10"/>
-   <point ath="10" atv="10"/>
+   <point ath="100" atv="10"/>
+   <point ath="100" atv="-10"/>
+   <point ath="120" atv="-10"/>
+   <point ath="120" atv="10"/>
   </hotspot>
  </scene>
  
@@ -230,7 +230,7 @@
   
 
 		
-  <view fov="120" fovmax="140" fovmin="70" fovtype="MFOV" hlookat="0.0" limitview="auto" maxpixelzoom="2.0" vlookat="0.0"/>
+  <view fov="120" fovmax="140" fovmin="70" fovtype="MFOV" hlookat="20.0" limitview="auto" maxpixelzoom="2.0" vlookat="0.0"/>
   
 
 		
@@ -249,10 +249,10 @@
 
 	
   <hotspot name="hs1" onclick="goto(scene_pano8);" style="roomspot|skin_tooltips" tooltip="click here">
-   <point ath="-70" atv="10"/>
+   <point ath="-50" atv="10"/>
+   <point ath="-50" atv="-10"/>
    <point ath="-70" atv="-10"/>
-   <point ath="-90" atv="-10"/>
-   <point ath="-90" atv="10"/>
+   <point ath="-70" atv="10"/>
   </hotspot>
  </scene>
  
