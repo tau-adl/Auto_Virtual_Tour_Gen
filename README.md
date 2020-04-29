@@ -58,7 +58,7 @@ The code contains 2 different parts, which are used in different parts of the ab
 	https://krpano.com/download
 
 
-### More Details
-A detailed description of the software installation and the code can be found in the project repost Appendix section.
+## More Details
+A detailed description of the software installations and the code can be found in the project report Appendix section.
 
 
