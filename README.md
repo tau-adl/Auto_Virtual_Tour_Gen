@@ -1,5 +1,4 @@
 # Auto-_Virtual_Tour_Gen
-Create an interactive visualisation of a scene by an automatic generation of a virtual tour from images captured by a drone.
 
 ## Background
 The workflow suggested in this project is an automatic virtual tour generation using a drone:
