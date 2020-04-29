@@ -28,7 +28,7 @@ An example of the result virtual tour can be easily viewed in your computer:
 
 
 A demonstration of the tour can also be viewed in this video:
-#########
+https://www.youtube.com/watch?v=FbnNVpJl6PU
 
 ## Code
 The code contains 2 different parts, which are used in different parts of the above flow:
