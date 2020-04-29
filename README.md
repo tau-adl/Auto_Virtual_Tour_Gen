@@ -48,11 +48,10 @@ The code contains 2 different parts, which are used in different parts of the ab
     The code is a python wrap which uses these 2 external programs:
     2a. Hugin framework - Used to: create panoramas from single images.
     
-        Download from: 
-        http://hugin.sourceforge.net/download/
+    Download from: 
+    http://hugin.sourceforge.net/download/
 
     2b. krpano framework - Used to: create a virtual tour from several panoramas.
-    
         Download from: 
         https://krpano.com/download
 
