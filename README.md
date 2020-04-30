@@ -19,16 +19,16 @@ Then, it uses the result panoramas to create a virtual tour, which is the final 
 
 
 ## Virtual Tour Example
-An example of the result virtual tour can be easily viewed in your computer:
+A demonstration of the tour can be viewed in this video:
+https://www.youtube.com/watch?v=FbnNVpJl6PU
+
+The virtual tour can easily be viewed in your computer: (this flow is also shown in the video)
 1. Download the "example_tour" folder
 2. Run:
     - Windows: tour\tour_testingserver.exe
     - Linux: tour/tour_testingserver_macos
 3. The virtual tour will be opened in the browser.
-
-
-A demonstration of the tour can also be viewed in this video:
-https://www.youtube.com/watch?v=FbnNVpJl6PU
+4. Changes to the tour can be made through the tour.xml file. In the video the transparency value of the hotspot clickable area (alpha parameter) is changed to 0 to get invisible hotspots.
 
 ## Code
 The code contains 2 different parts, which are used in different parts of the above flow:
