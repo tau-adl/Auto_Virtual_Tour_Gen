@@ -62,12 +62,12 @@ Instructions to use the code:
 1. Clone the repository “Auto_Virtual_Tour_Gen”.
 
 2. POIs calculation
-Run the file “calc_points_from_point_cloud.py” from its directory (the “code” directory) after fulfilling the requirements described in the next section.
+Run the file “calc_points_from_point_cloud.py” from its directory (the “code” directory).
 The code uses the points cloud “points_clouds/map_point.txt” which was received from the SLAM process. If you wish to use a different point cloud, update the path in the code.
 Plots will show the flow during the run, and the final 3 middle room points as described in the report will be printed on the screen. This is the input for the drone images capturing.
 
 3. Virtual tour creation
-- Fulfill the software requirements described in the next section, and make sure Hugin and Krpano frameworks are properly installed.
+- Make sure Hugin and Krpano frameworks are properly installed.
 - Insert required settings under the “Run configuration” section in the code (the second cell in the code).
 	* Set hugin script location path - the script is part of the source code and located in the “code” directory as default.
 	* Set the krpano directory path in code. This should be the installation directory of the software.
