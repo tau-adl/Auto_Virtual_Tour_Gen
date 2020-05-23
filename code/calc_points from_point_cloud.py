@@ -35,7 +35,6 @@ z_axis = 2 # the z coordinates location in the point cloud
 
 # visualization flag
 vis = True
-vis = False
 
 # params of Hough
 rho_res = 1 # [pixels]

@@ -11,21 +11,31 @@ import fileinput
 import shutil
 
 
-#%% Input data
+#%% Run configuration
+
+# Setup
+
+# Get\Set working directory
+cwd = os.getcwd() # make sure you run in the code directory
+cwd = '/home/yoni/Documents/Auto_Virtual_Tour_Gen/code'
+
+# Set Hugin framework script
+hugin_bash_template_file = os.path.join(cwd, 'run_pano_from_dir_template.sh')
+
+# Set Krpano framework script
+krpano_path = '/home/yoni/Documents/krpano-1.20.3'
+
+
+# Input Data
+
 # A directory with N sub-directories each contains the images collected at one of the point in the route
-# image_sequences_dir = r"C:\Users\shirang\Documents\myStuff\Project\panos\panos_office\image_sequence"
-# image_sequences_dir = r"C:\Users\shirang\Documents\myStuff\Project\panos\panos_sinai\image_sequence_reordered_images_2"
-# image_sequences_dir = r"C:\Users\shirang\Documents\myStuff\Project\panos\panos_sinai\image_sequence_2"
-image_sequences_dir = "image_sequence"
+image_sequences_dir = os.path.join(cwd,'image_sequence')
 
-suffix_in = '.jpg'
-suffix_out = '.tif'
+suffix_in = '.[jJ][pP][gG]' #jpg suffix - either uppercase letters or lowercase
+suffix_out = '.tif' # panoramas image format
 
-# krpano software directort
-krpano_path = "C:\Users\shirang\Documents\myStuff\Project\krpano-1.20"
-
-# Get number of points in route
-n_points = len(glob.glob(os.path.join(image_sequences_dir, "*")))
+# Get\Set number of points in route
+n_points = len(glob.glob(os.path.join(image_sequences_dir, "*"))) # make sure only image folders are present
 n_points = 9
 
 # Direction of turns in every point in the route (should be at size n_points-1)
@@ -39,15 +49,13 @@ route_directions =   ['forward',
                       'forward']
 
 
+#%% Create panoramas from images using Hugin framework
+
 # Create directory for all panoramas
 panos_dir = os.path.join(image_sequences_dir, 'panoramas')
 if not os.path.isdir(panos_dir):
     os.mkdir(panos_dir)
-
-
-#%% Create panoramas from images using Hugin framework
-bat_template_file = r"run_pano_from_dir_template.bat"
-
+    
 # create panorama for each point
 for point in range(1, n_points+1):
 
@@ -58,11 +66,13 @@ for point in range(1, n_points+1):
     images_string = " ".join(images_list)
 
     # create bat file for the current point
-    bat_file = os.path.join(images_dir, 'run_pano_from_dir.bat')
-    shutil.copyfile(bat_template_file, bat_file)
+    bash_file = os.path.join(images_dir, 'run_pano_from_dir.sh')
+    shutil.copyfile(hugin_bash_template_file, bash_file)
+    shutil.copystat(hugin_bash_template_file, bash_file)
+
 
     # edit the bat file to run over the current point images
-    for i, line in enumerate(fileinput.input(bat_file, inplace=True)):
+    for i, line in enumerate(fileinput.input(bash_file, inplace=True)):
         if (i == 0) :
             line = line.rstrip()
             sys.stdout.write(line + ' ' + images_dir + '\n')
@@ -73,7 +83,7 @@ for point in range(1, n_points+1):
             sys.stdout.write(line)
 
     # run bat file to create panorama for current point
-    subprocess.run(bat_file, shell=True)
+    subprocess.run(bash_file, shell=True)
 
     # copy panorama file to the panoramas folder
     pano_path = os.path.join(images_dir, 'pano' + suffix_out)  # get name of panorama
@@ -82,34 +92,32 @@ for point in range(1, n_points+1):
         shutil.copyfile(pano_path, pano_path_to_copy)
 
 print('')
-print('done with panoramas')
+print('Done with panoramas')
 print('')
 
 
-
-
-
-#%% Create a virtual tour from several panoramas using krpano framework
+#%% Create a virtual tour from several panoramas using Krpano framework
 
 # get list of panorama files
-images_list = glob.glob(os.path.join(panos_dir, '*' + suffix_out))
+images_list = sorted(glob.glob(os.path.join(panos_dir, '*' + suffix_out)))
 images_string = " ".join(images_list)
 
-# krpano bat file
-# bat_file = r"C:\Users\shirang\Documents\myStuff\Project\krpano-1.20\make_pano.bat"
-bat_file = os.path.join(krpano_path, 'make_pano.bat') # this is actually "MAKE PANO (NORMAL) droplet.bat" renames to have no spaces
+# krpano software directort
+cmd = krpano_path + "/krpanotools makepano -config=templates/vtour-normal.config -panotype=cylinder"
 
+vtour_dir = os.path.join(panos_dir, 'vtour')
+if os.path.isdir(vtour_dir):
+    os.rename(vtour_dir, vtour_dir+'_old')
 
-# subprocess.run(bat_file + " " + images_string, shell=True)
-sp = subprocess.Popen(bat_file + " " + images_string, stdin=subprocess.PIPE)
-sp.stdin.write("\r\n") # send the CR/LF for pause
-sp.stdin.close() # close so that it will proceed
+p = subprocess.run(cmd + " " + images_string, shell=True)
 
-
+print('')
+print("Done with inital vtour. You can find it here: " + vtour_dir)
+print('')
 
 
 #%% Insert hotspots by editing the vtour xml output file
-# after xml is updated, the changes will be visible when opening the vtour from the exe file
+# after xml is updated, the changes will be visible when opening the vtour
 
 xml_file = os.path.join(panos_dir, 'vtour', 'tour.xml')
 tree = ET.parse(xml_file)
@@ -184,21 +192,29 @@ points_forward = [[-10,10],
                   [10,-10],
                   [10,10]]
 
-points_left = [[-70,10],
-               [-70,-10],
-               [-90,-10],
-               [-90,10]]
+points_left = [[-80,10],
+               [-80,-10],
+               [-100,-10],
+               [-100,10]]
 
-points_right = [[-10,10],
-                [-10,-10],
-                [10,-10],
-                [10,10]]
+points_right = [[80,10],
+               [80,-10],
+               [100,-10],
+               [100,10]]
 
-point_dict = {'forward': points_forward, 'left': points_left, 'right': points_right}
+points_back = [[170,10],
+               [170,-10],
+               [190,-10],
+               [190,10]]
 
+point_dict = {'forward': points_forward, 'left': points_left, 'right': points_right, 'back': points_back}
 
-# connect all panoramas using a single hotspot to create original direction route
+# scenes directions for the backeards tours
+back_direction_of_scene_dict = {'forward': '180', 'left': '90', 'right': '-90', 'back': '0'}
+
+# connect all panoramas using a single hotspot to create original direction route 
 for i in range(0, n_points-1):
+    
     # get the appropriate hotspot location based on th route
     direction = route_directions[i]
     points = point_dict.get(direction)
@@ -206,7 +222,20 @@ for i in range(0, n_points-1):
     # scenes[i].append(hotspot_node)
     root.getchildren()[5+i].append(hotspot_node)
     # scenes[i].append(hotspot_node)
+    
+    # add backward hotspot
+    if i!=0:
+        points = point_dict.get('back')
+        hotspot_node = create_hotspot("hs2", "scene_back" + str(i), points)
+        root.getchildren()[5+i].append(hotspot_node)
 
+    # create additional copy of scene, for the way back with the proper direction
+    # import copy
+    scene_bck = copy.deepcopy(root.getchildren()[5+i]) 
+    scene_bck.set("name", "scene_back" + str(i+1))
+    back_scene_angle = back_direction_of_scene_dict[direction]
+    scene_bck.getchildren()[0].set("hlookat", back_scene_angle)
+    root.append(scene_bck)
 
 # print edited file
 print(ET.tostring(root, encoding='utf8').decode('utf8')) # print full xml file
@@ -216,6 +245,8 @@ xmlstr = minidom.parseString(ET.tostring(root)).toprettyxml(indent=" ")
 with open(os.path.join(panos_dir, 'vtour', 'tour.xml'), "w") as f:
     f.write(xmlstr)
 
-
+print('')
+print("Done adding hostspots to vtour. You can find it here: " + vtour_dir)
+print('')
 
 
