@@ -69,16 +69,16 @@ Plots will show the flow during the run, and the final 3 middle room points as d
 3. Virtual tour creation
 - Fulfill the software requirements described in the next section, and make sure Hugin and Krpano frameworks are properly installed.
 - Insert required settings under the “Run configuration” section in the code (the second cell in the code).
-* Set hugin script location path - the script is part of the source code and located in the “code” directory as default.
-* Set the krpano directory path in code. This should be the installation directory of the software.
-* Set the path to the images directory. In the repository, it is called ‘image_sequence’ and it is located in the code directory.
-Images data structure:
-The images captured in each POI are located in a different folder, and the name of each folder is the number of the POIs in an increasing order. The order of the folders, and the order of the images in each folder is the same as captured by the drone.
-If you wish to use different data, keep the same structure of folders and update the path in the code.
-* Set the format of the input images (‘jpg’ as default, as the format of the repository example images).
-* Set the format of the generated panoramic images (‘tif’ is the default).
-* Set the number of POIs in the data (9 POIs in the repository example).
-* Set the directions (forward\left\right\back) defining the connection between every two adjacent POIs in the progress of the tour. 
+	* Set hugin script location path - the script is part of the source code and located in the “code” directory as default.
+	* Set the krpano directory path in code. This should be the installation directory of the software.
+	* Set the path to the images directory. In the repository, it is called ‘image_sequence’ and it is located in the code directory.
+	Images data structure:
+	The images captured in each POI are located in a different folder, and the name of each folder is the number of the POIs in an increasing order. The order of the folders, and the order of the images in each folder is the same as captured by the drone.
+	If you wish to use different data, keep the same structure of folders and update the path in the code.
+	* Set the format of the input images (‘jpg’ as default, as the format of the repository example images).
+	* Set the format of the generated panoramic images (‘tif’ is the default).
+	* Set the number of POIs in the data (9 POIs in the repository example).
+	* Set the directions (forward\left\right\back) defining the connection between every two adjacent POIs in the progress of the tour. 
 - Run “create_pano.py” from its directory (the “code” directory).
 - In the “image_sequence” directory, a new directory called “panoramas” will be created, where the panoramas are saved. An additional directory called “vtour” will be created inside the “panoramas” directory, where the virtual tour files are located.
 - The virtual tour can be easily loaded using the “tour.html” file under the “vtour” directory.
