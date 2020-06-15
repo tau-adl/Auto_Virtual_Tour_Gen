@@ -35,12 +35,14 @@ The code contains 2 different parts, which are used in different parts of the ab
 
 1. A code for POI selection derived from a sparse point-cloud created on the first exploration video step.
     In these POIs images will be acquired and used for the virtual tour creation.
+    
     Requirements:
     python=3.6
     libraries: cv2, Open3d, numpy, pandas, matplotlib.pyplot
 
 
 2. A code for an automatic panorama-based virtual tour creation from single images.
+
     Requirements:
     python=3.6
     installed libraries: xml, shutil, subprocess, glob, fileinput
