@@ -46,6 +46,7 @@ The code contains 2 different parts, which are used in different parts of the ab
     installed libraries: xml, shutil, subprocess, glob, fileinput
 
     The code is a python wrap which uses these 2 external programs:
+    
     2a. Hugin framework - Used to: create panoramas from single images.
     
     Download from: 
