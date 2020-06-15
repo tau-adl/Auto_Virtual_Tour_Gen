@@ -33,7 +33,7 @@ The virtual tour can easily be viewed in your computer: (this flow is also shown
 ## Code Description
 The code contains 2 different parts, which are used in different parts of the above flow:
 
-1. A code for POI selection derived from a sparse point-cloud created on the first exploration video step.
+1. “calc_points_from_point_cloud.py” - A code for POI selection derived from a sparse point-cloud created on the first 	exploration video step.
     In these POIs images will be acquired and used for the virtual tour creation.
     
     Requirements:
@@ -41,7 +41,7 @@ The code contains 2 different parts, which are used in different parts of the ab
     libraries: cv2, Open3d, numpy, pandas, matplotlib.pyplot
 
 
-2. A code for an automatic panorama-based virtual tour creation from single images.
+2. “create_pano.py” - A code for an automatic panorama-based virtual tour creation from single images.
 
     Requirements:
     python=3.6
